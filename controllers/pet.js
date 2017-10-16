@@ -9,6 +9,7 @@ router.get('/',(req,res)=>{
 		})	
 	})
 })
+//creating new page and pet form
 router.get('/new', (req,res)=>{
 	res.render('new',{})
 })
@@ -21,5 +22,31 @@ router.post('/', (req,res)=>{
 		}
 	})
 })
+
+//edit page
+
+router.get('/:id/edit',(req,res) =>{
+	Pet.findById(req.params.id, (err,pet)=>{
+		res.render('edit',{pet: pet})
+	})
+})
+router.put('/:id', (req,res)=>{
+	Pet.findByIdAndUpdate(req.params.id, req.body, (err,pet)=>{
+		res.redirect('/pets')
+	})
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="/styles/style.css"
+</head>
+<body>
+<h1> Edit Pet Page</h1>
+<form action="/pets/<%= pet.id %>?_method=PUT" method="POST">
+	Name: <input type="text" name="name" value="<%= pet.name %>">
+	Type: <select name="type">
+		<option value=""></option>
+		<option  <%= pet.type == "cat" ? "selected" : "" %> value="cat">Cat</option>
+		<option <%= pet.type == "dog" ? "selected" : "" %> value="dog">Dog</option>
+		<option <%= pet.type == "fish" ? "selected" : "" %> value="fish">Fish</option>
+	</select>
+	Age: <input type="text" name="age" value="<%= pet.age %>">
+	Color: <input type="text" name="color" value="<%= pet.color %>">
+	<button type="submit">Update</button>
+</form>
+
+
+</body>
+</html>
