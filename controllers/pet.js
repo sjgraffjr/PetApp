@@ -44,6 +44,14 @@ router.get('/:id', (req,res)=>{
 	})
 })
 
+//delete page
+
+router.delete('/:id', (req,res)=>{
+	Pet.findByIdAndRemove(req.params.id, (err,pet)=>{
+		res.redirect('/pets')
+	})
+})
+
 
 
 
