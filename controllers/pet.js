@@ -8,8 +8,18 @@ router.get('/',(req,res)=>{
 			pets: pets
 		})	
 	})
-	
-	
+})
+router.get('/new', (req,res)=>{
+	res.render('new',{})
+})
+router.post('/', (req,res)=>{
+	Pet.create(req.body,(err,pet)=>{
+		if(err){
+			res.send('Error')
+		}else{
+			res.redirect('/pets')
+		}
+	})
 })
 
 module.exports = router;
