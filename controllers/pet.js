@@ -3,9 +3,12 @@ const router = express.Router();
 const Pet = require('../models/pet')
 
 router.get('/',(req,res)=>{
-	res.render('index', {
-				pets: Pet
+	Pet.find((err,pets)=>{
+		res.render('index', {
+			pets: pets
+		})	
 	})
+	
 	
 })
 
