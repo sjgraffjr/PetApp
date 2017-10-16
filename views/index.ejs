@@ -8,9 +8,9 @@
 <ul>
 		<% for(let i = 0; i < pets.length; i++){ %>
 			<li>
-				<a href='/pet/<%=i%>'><%=pets[i].name%></a>
+				<a href='/pets/<%=pets[i].id %>'><%=pets[i].name%></a>
  			</li>
- 			<form action="/pet/<%= i%>?_method=DELETE" method="POST">
+ 			<form action="/pets/<%=pets[i].id %>?_method=DELETE" method="POST">
 			<button type="submit">Delete</button>
 		</form>
  		<%}%>

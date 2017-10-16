@@ -36,6 +36,14 @@ router.put('/:id', (req,res)=>{
 	})
 })
 
+//show page
+
+router.get('/:id', (req,res)=>{
+	Pet.findById(req.params.id, (err,pet)=>{
+		res.render('show', {pet:pet})
+	})
+})
+
 
 
 
