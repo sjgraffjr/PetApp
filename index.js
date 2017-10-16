@@ -10,6 +10,7 @@ app.set('view engine','ejs');
 app.set('views',__dirname + '/views');
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
 app.use('/pets', petController)//name space for all the routes = '/'

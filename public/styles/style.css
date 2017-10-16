@@ -1,0 +1,10 @@
+body {
+  color: steelblue;
+  font-family: 'Amatic SC', cursive;
+  font-size: 50px;
+}
+h1 {
+  padding: 30px;
+  margin: 0 auto;
+  width: 50%;
+}
